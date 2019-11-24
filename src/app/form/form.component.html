@@ -1,0 +1,42 @@
+<p>
+    Formulaire: {{ userprofileForm.value | json }}
+</p> <br>
+
+<mat-card>
+<form [formGroup]="userprofileForm" (ngSubmit)="onSubmit()">
+    <mat-card-content>
+    <label>
+            <mat-form-field>
+                <mat-card-title>First Name:</mat-card-title>
+                <input matInput type="text" formControlName="firstName">
+            </mat-form-field>
+    </label> <br>
+    </mat-card-content>
+    <mat-card-content>
+
+    <label>
+        <mat-form-field>
+            <mat-card-title>Last Name:</mat-card-title>
+        <input matInput type="text" formControlName="lastName">
+        </mat-form-field>
+    </label><br>
+    </mat-card-content>
+
+    <label>
+        <mat-form-field>
+            <mat-card-title>Age:</mat-card-title>
+        <input matInput type="text" formControlName="age">
+        </mat-form-field>
+    </label><br>
+
+    <label>
+        <mat-form-field>
+            <mat-card-title>Email:</mat-card-title>
+        <input matInput type="text" formControlName="email">
+        </mat-form-field>
+    </label><br>
+    <mat-card-actions>
+        <button mat-button color="primary" type="submit" [disabled]="!userprofileForm.valid">Submit</button>
+    </mat-card-actions>
+</form>
+</mat-card>
